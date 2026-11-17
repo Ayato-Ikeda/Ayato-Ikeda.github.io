@@ -3,10 +3,10 @@
     box-sizing: border-box;
 }
 
-/* ページ全体の背景 */
+/* ページ全体の背景（深みのあるダークネイビー） */
 html {
     min-height: 100%;
-    background-color: #f3f6fb;
+    background-color: #080d16;
 }
 
 /* コンテンツを中央に配置する */
@@ -16,22 +16,23 @@ body {
     padding: 56px 24px 80px;
     font-family: "Segoe UI", "Hiragino Kaku Gothic ProN",
         "Yu Gothic", Meiryo, sans-serif;
-    color: #334155;
+    color: #94a3b8;
     line-height: 1.8;
     overflow-wrap: anywhere;
 }
 
-/* サイトのタイトル */
+/* サイトのタイトル（ディープブルーからシアン/パープル系へ） */
 h1 {
     margin: 0 0 44px;
     padding: 40px 36px;
-    border-radius: 20px;
-    background: linear-gradient(120deg, #17365b, rgb(236, 4, 56));
-    box-shadow: 0 12px 30px black;
-    color: #ffffff;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #0f172a, #1e1b4b);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    color: #f8fafc;
     font-size: clamp(1.5rem, 3.5vw, 2.1rem);
     line-height: 1.5;
-    letter-spacing: 0.03em;
+    letter-spacing: 0.05em;
+    border: 1px solid rgba(148, 163, 184, 0.1);
 }
 
 /* タイトルの上に添える小さなラベル */
@@ -39,40 +40,46 @@ h1::before {
     content: "PORTFOLIO";
     display: block;
     margin-bottom: 12px;
-    color: #bfdbfe;
+    color: #38bdf8;
     font-size: 0.75rem;
     font-weight: 600;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.25em;
 }
 
 /* 「自己紹介」「ポートフォリオ」の見出し */
 h2 {
     margin: 36px 0 16px;
     padding-left: 14px;
-    border-left: 4px solid  rgb(236, 4, 56);
-    color: #17365b;
+    border-left: 4px solid #38bdf8;
+    color: #f1f5f9;
     font-size: 1.25rem;
     line-height: 1.5;
 }
 
-/* 本文を白いカードとして表示する */
+/* 本文をシャープなカードとして表示する */
 p {
-    margin: 0;
+    margin: 0 0 24px;
     padding: 24px 28px;
-    border: 1px solid #e2e8f0;
-    border-radius: 14px;
-    background-color: #ffffff;
-    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+    border: 1px solid #1e293b;
+    border-radius: 12px;
+    background-color: #0f172a;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    color: #cbd5e1;
     line-height: 2;
 }
 
 /* 作品紹介用のカード */
 .portfolio-card {
     padding: 28px;
-    border-top: 3px solid rgb(236, 4, 56);
-    color: #17365b;
+    border: 1px solid #1e293b;
+    border-radius: 12px;
+    background-color: #0f172a;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    border-top: 3px solid #818cf8;
+    color: #f8fafc;
     font-size: 1.15rem;
     font-weight: 700;
+    margin-bottom: 24px;
 }
 
 /* 作品名の上に添える小さなラベル */
@@ -88,18 +95,18 @@ p {
 
 /* リンクを追加した場合の見た目 */
 a {
-    color: rgb(236, 4, 56);
+    color: #38bdf8;
     text-decoration-thickness: 1px;
     text-underline-offset: 4px;
 }
 
 a:hover {
-    color: #123b68;
+    color: #818cf8;
     text-decoration-thickness: 2px;
 }
 
 a:focus-visible {
-    outline: 3px solid rgb(236, 4, 56);
+    outline: 3px solid #38bdf8;
     outline-offset: 5px;
 }
 
@@ -112,7 +119,7 @@ a:focus-visible {
     h1 {
         margin-bottom: 32px;
         padding: 28px 20px;
-        border-radius: 16px;
+        border-radius: 12px;
     }
 
     h2 {
@@ -131,38 +138,39 @@ a:focus-visible {
    JavaScript と組み合わせた演出
    ========================================================= */
 
-/* ダークモードの切り替えボタン */
+/* ダークモードの切り替えボタン（ライトモード風のアクセントに反転） */
 .theme-toggle {
     display: block;
     margin: 0 0 18px auto;
     padding: 10px 18px;
-    border: 1px solid #cbd5e1;
+    border: 1px solid #334155;
     border-radius: 999px;
-    background: #ffffff;
-    color: #17365b;
+    background: #0f172a;
+    color: #f8fafc;
     font: inherit;
     font-size: 0.9rem;
     font-weight: 700;
     cursor: pointer;
-    transition: background-color 0.2s, transform 0.2s;
+    transition: background-color 0.2s, transform 0.2s, border-color 0.2s;
 }
 
 .theme-toggle:hover {
-    background-color: #e8f1ff;
+    background-color: #1e293b;
+    border-color: #38bdf8;
     transform: translateY(-2px);
 }
 
 .theme-toggle:focus-visible {
-    outline: 3px solid rgb(236, 4, 56);
+    outline: 3px solid #38bdf8;
     outline-offset: 3px;
 }
 
-/* タイトル上をマウスが動くと光の位置が変わる */
+/* タイトル上をマウスが動くと光の位置が変わる（シアンの光） */
 h1 {
     background:
         radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-            rgba(147, 197, 253, 0.5), transparent 42%),
-        linear-gradient(120deg, #17365b, rgb(236, 4, 56));
+            rgba(56, 189, 248, 0.25), transparent 50%),
+        linear-gradient(135deg, #0f172a, #1e1b4b);
 }
 
 /* 画面内に入ると、ふわっと表示する */
@@ -180,55 +188,60 @@ h1 {
 /* 作品カードはマウスを乗せると少し浮く */
 .portfolio-card {
     transition: box-shadow 0.25s ease, transform 0.25s ease,
-        opacity 0.7s ease;
+        opacity 0.7s ease, border-color 0.25s ease;
 }
 
 .portfolio-card.is-visible:hover {
     transform: translateY(-5px);
-    box-shadow: 0 12px 32px rgba(23, 54, 91, 0.16);
+    border-color: #38bdf8;
+    box-shadow: 0 12px 32px rgba(56, 189, 248, 0.15);
 }
 
-/* ダークモード */
+/* ダークモード（さらに引き締まったウルトラ・ダーク仕様） */
 html.dark {
-    background-color: #0b1220;
+    background-color: #030712;
 }
 
 .dark body {
-    color: #cbd5e1;
-}
-
-.dark h2 {
-    color: #bfdbfe;
-    border-left-color: #60a5fa;
-}
-
-.dark p {
-    background-color: #182337;
-    color: #e2e8f0;
-    border-color: #334155;
-    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.2);
-}
-
-.dark .portfolio-card {
-    border-top-color: #60a5fa;
-}
-
-.dark .portfolio-card::before {
     color: #94a3b8;
 }
 
+.dark h2 {
+    color: #f8fafc;
+    border-left-color: #818cf8;
+}
+
+.dark p {
+    background-color: #0b0f19;
+    color: #cbd5e1;
+    border-color: #1f2937;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+}
+
+.dark .portfolio-card {
+    background-color: #0b0f19;
+    border-color: #1f2937;
+    border-top-color: #818cf8;
+    color: #f8fafc;
+}
+
+.dark .portfolio-card::before {
+    color: #64748b;
+}
+
 .dark .theme-toggle {
-    color: #e2e8f0;
-    background-color: #1e293b;
-    border-color: #475569;
+    color: #f8fafc;
+    background-color: #0b0f19;
+    border-color: #374151;
 }
 
 .dark .theme-toggle:hover {
-    background-color: #334155;
+    background-color: #1f2937;
+    border-color: #818cf8;
 }
 
 .dark a {
-    color: #93c5fd;
+    color: #818cf8;
 }
 
 /* アニメーションを控えたい設定の人には、動かさず表示する */
@@ -248,6 +261,4 @@ html.dark {
     .portfolio-card.is-visible:hover {
         transform: none;
     }
-	
-	
 }
